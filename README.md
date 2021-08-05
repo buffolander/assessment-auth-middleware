@@ -12,6 +12,8 @@ The middleware should meet the following acceptance criteria:
 * For an invalid token, it should end the request-response cycle by returning a 401 response.
 * It should confirm the structure of the JWT, validate the JWT signature, and verify the claims, as described in this article: https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-verifying-a-jwt.html.
 
-We intend to use the `verify` function of `jsonwebtoken` NPM package to do much of the heavy-lifting (https://www.npmjs.com/package/jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback).
+We intend to use the `verify` function of the `jsonwebtoken` NPM package to do much of the heavy-lifting (https://www.npmjs.com/package/jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback).
 
-HINT: you might be best using the alternative `decode` function provided by `jsonwebtoken` to get going (https://www.npmjs.com/package/jsonwebtoken#jwtdecodetoken--options).
+HINT: you might be best using the alternative `decode` function provided by `jsonwebtoken` to get started (https://www.npmjs.com/package/jsonwebtoken#jwtdecodetoken--options).
+
+A failing "happy path" test has already been set up for you, including a mock response for the request to retrieve the public key used to verify the token signature.
