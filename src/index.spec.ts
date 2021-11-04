@@ -60,7 +60,7 @@ describe('A request without an access token', () => {
   })
 })
 
-describe('A request without an expired access token', () => {
+describe('A request with an expired access token', () => {
   test('should return status code 401', async () => {
     const token = await tokenGenerator.createSignedJWT({
       ...claims,
@@ -79,7 +79,7 @@ describe('A request without an expired access token', () => {
   })
 })
 
-describe('A request without a tampered access token', () => {
+describe('A request with a tampered access token', () => {
   test('should return status code 401', async () => {
     const token =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
